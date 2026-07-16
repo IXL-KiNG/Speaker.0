@@ -57,8 +57,10 @@ jobs:
     - uses: actions/setup-python@v5
       with:
         python-version: ${{ env.PYTHON_VERSION }}
-    - run: brew install portaudio
-    - run: |
+    - name: Install system dependencies
+      run: brew install portaudio
+    - name: Install Python Dependencies
+      run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - uses: subosito/flutter-action@v2
@@ -81,8 +83,10 @@ jobs:
     - uses: actions/setup-python@v5
       with:
         python-version: ${{ env.PYTHON_VERSION }}
-    - run: choco install portaudio
-    - run: |
+    - name: Install system dependencies
+      run: choco install portaudio
+    - name: Install Python Dependencies
+      run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - uses: subosito/flutter-action@v2
@@ -105,8 +109,10 @@ jobs:
     - uses: actions/setup-python@v5
       with:
         python-version: ${{ env.PYTHON_VERSION }}
-    - run: brew install portaudio
-    - run: |
+    - name: Install system dependencies
+      run: brew install portaudio
+    - name: Install Python Dependencies
+      run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - uses: subosito/flutter-action@v2
@@ -129,10 +135,12 @@ jobs:
     - uses: actions/setup-python@v5
       with:
         python-version: ${{ env.PYTHON_VERSION }}
-    - run: |
+    - name: Install system dependencies
+      run: |
         sudo apt-get update -y
         sudo apt-get install -y portaudio19-dev python3-dev
-    - run: |
+    - name: Install Python Dependencies
+      run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - uses: subosito/flutter-action@v2
@@ -159,8 +167,10 @@ jobs:
     - uses: actions/setup-python@v5
       with:
         python-version: ${{ env.PYTHON_VERSION }}
-    - run: brew install portaudio
-    - run: |
+    - name: Install system dependencies
+      run: brew install portaudio
+    - name: Install Python Dependencies
+      run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     - uses: subosito/flutter-action@v2
@@ -175,4 +185,5 @@ jobs:
         path: build/ipa
         if-no-files-found: warn
         overwrite: false
+
 
